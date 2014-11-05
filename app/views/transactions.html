@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row margin-top">
+        <div class="col-xs-12">
+            <a ng-href="#/dashboard/{{contact.contact_id}}" class="btn btn-primary"><i class="fa fa-arrow-left"></i></a>
+        </div>
+    </div>
+    <div class="row margin-top">
+        <div class="col-xs-12">
+            <div class="text-center">
+                <img src="public/img/profiles/{{contact.contact_id}}.jpg" class="img-circle" height="150">
+                <h4>{{contact.contact_name}}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row margin-top">
+        <div class="col-xs-12">
+            <h2 class="text-center" ng-class="getBalance() < 0 ? 'text-warning' : 'text-success'"><b>&pound;{{getBalance()}}</b></h2>
+            <table class="table text-center">
+                <tr ng-repeat="transaction in transactions" ng-class="transaction.transaction_transaction_type_id == 1 ? 'danger' : 'success'">
+                    <td>&pound;{{transaction.transaction_amount}}</td>
+                    <td>{{transaction.transaction_creation_timestamp | dateToISO | date: 'dd-M-yyyy'}}</td>
+                    <td width="1"><button ng-click="deleteTransaction(transaction.transaction_id)" class="btn btn-danger"><i class="fa fa-minus"></i></button></td>
+                </tr>
+                <tr ng-hide="transactions">
+                    <td colspan="2" class="success">No Transactions Yet</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

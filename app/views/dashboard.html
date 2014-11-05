@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="row transaction margin-top">
+        <div class="col-xs-12">
+            <form>
+                <div class="form-group">
+                    <div class="form-group contacts">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div ng-repeat="contact in contacts" ng-show="showContactID == {{contact.contact_id}}">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <a ng-href="#/transactions/{{contact.contact_id}}" class="btn btn-primary btn-block">View {{contact.contact_name}}'s Transactions</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="radio text-center">
+                                                <label>
+                                                    <input type="radio" value="{{contact.contact_id}}" ng-checked="showContactID == {{contact.contact_id}}" ng-model="transaction.transaction_contact_id">
+                                                    <img src="public/img/profiles/{{contact.contact_id}}.jpg" class="img-circle" height="150">
+                                                    <h4>{{contact.contact_name}}</h4>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-xs-6">
+                                <a class="btn btn-transparent btn-block" ng-click="changeContact('prev')"><i class="fa fa-chevron-left fa-2x"></i></a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a class="btn btn-transparent btn-block" ng-click="changeContact('next')"><i class="fa fa-chevron-right fa-2x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group plus">
+                        <button ng-click="transactionUpdateAmount(5)" class="btn btn-success btn-block btn-top form-control"><i class="fa fa-plus"></i></button>
+                    </div>
+                    <div class="form-group amount">
+                        <input type="number" class="form-control text-center" onkeypress="return event.charCode >= 48 && event.charCode <= 57" ng-model="transaction.transaction_amount">
+                    </div>
+                    <div class="form-group minus">
+                        <button ng-click="transactionUpdateAmount(-5)" class="btn btn-danger btn-block btn-bottom form-control"><i class="fa fa-minus"></i></button>
+                    </div>
+                    <!--<button ng-click="showExtraOptions = !showExtraOptions" class="btn btn-primary btn-block">Extra Options</button>-->
+                </div>
+
+                <!--<div ng-show="showExtraOptions">
+                    <div style="display:inline-block; min-height:290px;">
+                        <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+                    </div>
+                </div>-->
+
+                <!-- Change dropdown to 2 buttons, 1 for loan and 1 for repayment -->
+                <!--<div class="form-group">
+                    <select ng-init="transaction.transaction_transaction_type_id = 1" ng-model="transaction.transaction_transaction_type_id" class="form-control">
+                        <option disabled="disabled">Select a Transaction</option>
+                        <option value="1">Loan</option>
+                        <option value="2">Repay</option>
+                    </select>
+                </div>-->
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <button ng-click="addTransaction(transaction, 'repayment')" type="submit" class="btn btn-success btn-lg btn-block">Repayment</button>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <button ng-click="addTransaction(transaction, 'loan')" type="submit" class="btn btn-danger btn-lg btn-block">Loan</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+
+        </div>
+    </div>
+</div>

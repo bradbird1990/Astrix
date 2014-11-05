@@ -1,0 +1,59 @@
+<!--
+
+    /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+
+        Welcome to Astrix
+        Designed by Brad Bird
+
+            Website:    http://techtonix.co.uk
+            Email:      brad@techtonix.co.uk
+            Author:     Brad "Bradius" Bird
+            Version:    1.0.0
+            Timestamp:  02/11/2014
+
+            "Let’s go invent tomorrow instead of worrying about what
+                happened yesterday." - Steve Jobs
+
+    /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+
+-->
+<!doctype>
+<html>
+<head>
+    <title>Astrix</title>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- AngularJS and other scripts -->
+    <script type="text/javascript" src="./includes/angularjs/angular.min.js"></script>
+    <script type="text/javascript" src="./includes/angularjs/angular-route.min.js"></script>
+    <script type="text/javascript" src="./includes/angularjs/angular-ui.min.js"></script>
+    <script type="text/javascript" src="./includes/jquery/jquery.min.js"></script>
+
+    <script type="text/javascript" src="App.js"></script>
+
+    <script type="text/javascript" src="services/DbSvc.js"></script>
+    <script type="text/javascript" src="services/ContactsSvc.js"></script>
+    <script type="text/javascript" src="services/TransactionsSvc.js"></script>
+
+    <script type="text/javascript" src="controllers/AppCtrl.js"></script>
+    <script type="text/javascript" src="controllers/DashboardCtrl.js"></script>
+    <script type="text/javascript" src="controllers/ContactsCtrl.js"></script>
+    <script type="text/javascript" src="controllers/TransactionsCtrl.js"></script>
+
+    <!-- Bootstrap sheets and other cascading style sheets (CSS) -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/app.css">
+</head>
+<body ng-app="app" ng-controller="AppCtrl">
+
+<div class="page-container">
+    <div class="page" ng-view></div>
+</div>
+
+</body>
+</html>
